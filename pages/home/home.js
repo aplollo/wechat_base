@@ -73,7 +73,7 @@ Page({
     })
     console.log(siteId)
     let params = { siteId: siteId }
-    return network('/api/advertList', params, 'POST').then(res => {
+    return network('/xxx', params, 'POST').then(res => {
       console.log(res)
       let data = res.data.obj.page.rows;
       let bannerList = [];
@@ -127,7 +127,7 @@ Page({
       icon: 'loading',
       duration: 60000
     })
-    network('/api/productList', params, 'POST').then(res => {
+    network('/xxx', params, 'POST').then(res => {
       console.log(res)
       if (res.data.code == 200) {
         this.data.page++;
@@ -172,7 +172,7 @@ Page({
       siteId,
       spIds
     }
-    network('/api/productPrice', params, 'POST').then(res => {
+    network('/xxx', params, 'POST').then(res => {
       if (callBack) callBack()
       if (res.data.success && res.data.code == 200) {
         console.log(res.data.obj)

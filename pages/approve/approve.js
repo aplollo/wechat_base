@@ -43,7 +43,7 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    network('/api/act/findHistoryTaskList',params,'POST').then(res => {
+    network('/xxx/findHistoryTaskList',params,'POST').then(res => {
       wx.hideLoading()
       console.log(res)
       if(res.data.code == 200) {
@@ -141,7 +141,7 @@ Page({
           wx.showLoading({
             title: '审批中',
           })
-          network('/api/orderAuditPassForWx', params, 'POST').then(res => {
+          network('/xxx', params, 'POST').then(res => {
             wx.hideLoading()
             if (res.data.code == 200) {
               that.data.passFlag = true
@@ -203,7 +203,7 @@ Page({
           wx.showLoading({
             title: '审批中',
           })
-          network('/api/orderAuditNotPass',params,'POST').then(res => {
+          network('/xxx',params,'POST').then(res => {
             wx.hideLoading()
             that.data.passFlag = true;
             if(res.data.code == 200) {

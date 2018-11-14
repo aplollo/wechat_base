@@ -35,7 +35,7 @@ Page({
   },
   initData() {
     console.log(this.data.query)
-    network('/api/productList', this.data.query, 'POST').then(res => {
+    network('/xxx', this.data.query, 'POST').then(res => {
       console.log(res)
       if (res.data.code == 200) {
         this.data.query.page++;
@@ -82,7 +82,7 @@ Page({
       siteId,
       spIds
     }
-    network('/api/productPrice', params, 'POST').then(res => {
+    network('/xxx', params, 'POST').then(res => {
       if (callBack) callBack()
       if (res.data.success && res.data.code == 200) {
         console.log(res.data.obj)

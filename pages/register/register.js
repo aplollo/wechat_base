@@ -89,7 +89,7 @@ Page({
     // }
     console.log(app)
     let that = this
-    return network('/api/wx/verifyUserInfo', this.data.obj, 'POST', {"Content-Type":"application/json"})
+    return network('/xxx/verifyUserInfo', this.data.obj, 'POST', {"Content-Type":"application/json"})
     .then(res => {
       console.log(res)
       if (res.data.code == 200) {

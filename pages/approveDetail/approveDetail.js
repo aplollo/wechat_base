@@ -18,7 +18,7 @@ Page({
     this.init(options.orderNo)
   },
   init(orderNo) {
-    network('/api/myOrderDetail', {orderNo}, 'POST').then(res => {
+    network('/xxx', {orderNo}, 'POST').then(res => {
       console.log(res)
       if( res.data.code == 200 ) {
         let orderDetail = res.data.obj.entity
@@ -34,7 +34,7 @@ Page({
           totalPrice: this.data.totalPrice,
           saleNum: this.data.saleNum
         })
-        network('/api/act/findHistoryActInstanceList', { processInstanceId: res.data.obj.entity.taskProcessId},'POST').then(res => {
+        network('/xxx/findHistoryActInstanceList', { processInstanceId: res.data.obj.entity.taskProcessId},'POST').then(res => {
           this.setData({
             auditLoad: res.data.obj.voList
           })

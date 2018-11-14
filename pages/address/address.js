@@ -38,7 +38,7 @@ Page({
       token: token,
       source: source
     }
-    network('/api/getAddressList',params,'POST').then(res => {
+    network('/xxx',params,'POST').then(res => {
       console.log(res)
       if(res.data.code = 200) {
         this.setData({
@@ -81,7 +81,7 @@ Page({
             source: that.data.chooseItem,
             addrId
           }
-          network('/api/address/setDefault',params,'POST').then(res => {
+          network('/xxx/setDefault',params,'POST').then(res => {
             console.log(res)
             if(res.data.code ==200) {
               that.getAddress(that.data.chooseItem)
@@ -112,7 +112,7 @@ Page({
           console.log(that.data.deleteFlag)
           if (!that.data.deleteFlag) return
           that.data.deleteFlag = false
-          network('/api/addressDelete', params,'POST').then(res => {
+          network('/xxx', params,'POST').then(res => {
             if(res.data.code == 200) {
               wx.showToast({
                 title: '删除成功',

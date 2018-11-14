@@ -27,7 +27,7 @@ Page({
       source: this.data.source,
       siteId: this.data.siteId,
     }
-    network('/api/getAddressList',params,'POST').then(({data}) => {
+    network('/xxx',params,'POST').then(({data}) => {
       if(data.success) {
         console.log(data.obj.addressList)
         this.setData({

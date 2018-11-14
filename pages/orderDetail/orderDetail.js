@@ -27,7 +27,7 @@ Page({
       orderNo
     }
     // 订单是否可以撤销
-    network('/api/isCancel', params,'POST').then(({data}) => {
+    network('/xxx', params,'POST').then(({data}) => {
       console.log(data)
       if(data.code == 200) {
         console.log(123)
@@ -37,7 +37,7 @@ Page({
       }
     })
     // 初始化订单
-    network('/api/myOrderDetail',{orderNo},'POST').then(({data}) => {
+    network('/xxx',{orderNo},'POST').then(({data}) => {
       console.log(data)
       if(data.code ==200) {
         let orderDetailList = data.obj.entity.orderDetailList
@@ -58,7 +58,7 @@ Page({
         let statusParams = {
           processInstanceId: data.obj.entity.taskProcessId
         }
-        network('/api/act/findHistoryActInstanceList', statusParams,'POST').then(res => {
+        network('/xxx/findHistoryActInstanceList', statusParams,'POST').then(res => {
           console.log(res.data)
           if(res.data.code == 200) {
             this.setData({
@@ -88,7 +88,7 @@ Page({
             orderNo:that.data.orderNo,
             processInstanceId: that.data.orderDetail.taskProcessId
           }
-          network('/api/orderCancel', params,'POST').then(({data}) => {
+          network('/xxx', params,'POST').then(({data}) => {
             console.log(res)
             if (data.success) {
               wx.navigateBack({

@@ -8,7 +8,7 @@ Page({
     let that = this
     let siteId = wx.getStorageSync('site').id
     let params = { siteId: siteId }
-    network('/api/specialAdvertList',params,'POST').then(res => {
+    network('/xxx',params,'POST').then(res => {
       console.log(res)
       if(res.data.code == 200) {
         this.setData({

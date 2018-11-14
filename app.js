@@ -15,14 +15,14 @@ App({
       var openId = wx.getStorageSync('openId')
       if (!openId) {
         function getOpenId() {
-          var basepath = _this.config.apiBase + '/api/wx/getopenid'
+          var basepath = _this.config.apiBase + '/xxx/getopenid'
           var log = login.getOpenId(basepath)
           console.log(log)
           if (log) {
             console.log(log)
             console.log('openid保存成功')
             _this.globalData.openId = wx.getStorageSync('openId')
-            let basepath = _this.config.apiBase + '/api/wx/verifyUserBind'
+            let basepath = _this.config.apiBase + '/xxx/verifyUserBind'
             wx.request({
               url: basepath,
               data: {
@@ -69,7 +69,7 @@ App({
         getOpenId()
       } else {
         _this.globalData.openId = openId
-        let basepath = _this.config.apiBase + '/api/wx/verifyUserBind'
+        let basepath = _this.config.apiBase + '/xxx/verifyUserBind'
         wx.request({
           url: basepath,
           data: {

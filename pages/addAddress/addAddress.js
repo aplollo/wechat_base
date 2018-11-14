@@ -185,7 +185,7 @@ Page({
       source: this.data.source,
       parentId
     }
-    network('/api/districtList', params, 'POST').then(({ data }) => {
+    network('/xxx', params, 'POST').then(({ data }) => {
       if (success) success(data);
     })
   },
@@ -382,7 +382,7 @@ Page({
       this.data.address.id = this.data.id
     }
     console.log(this.data.address)
-    network('/api/addressSave', this.data.address, 'POST', {"Content-Type": "application/json"}).then(res => {
+    network('/xxx', this.data.address, 'POST', {"Content-Type": "application/json"}).then(res => {
       if(res.data.code == 200) {
         wx.switchTab({
           url: '../mine/mine',

@@ -66,7 +66,7 @@ Page({
       icon: 'loading',
       duration: 60000
     })
-    network('/api/myOrderList',params,'POST').then(res => {
+    network('/xxx',params,'POST').then(res => {
       wx.hideToast()
       if(res.data.code ==200) {
         let data = res.data.obj.page.rows

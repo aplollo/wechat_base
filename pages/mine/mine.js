@@ -8,7 +8,7 @@ Page({
   onLoad: function (options) {
     let token = wx.getStorageSync('token')
     let unit = wx.getStorageSync('site').cashUnit
-    // network('/api/findOrgAccount', {token},'POST').then(res => {
+    // network('/xxx', {token},'POST').then(res => {
     //   console.log(res)  
     // })
   },

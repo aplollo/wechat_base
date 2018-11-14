@@ -35,7 +35,7 @@ Page({
     }
     let params = wx.getStorageSync('veryobj')
     console.log(params)
-    return network('/api/wx/sendVeriCode', params, 'POST', {"Content-Type": "application/json"}).then(res => {
+    return network('/xxx/sendVeriCode', params, 'POST', {"Content-Type": "application/json"}).then(res => {
       console.log(res)
       if(res.data.code == 200) {
         wx.showToast({
@@ -68,7 +68,7 @@ Page({
     let openId = wx.getStorageSync('openId')
     let params = { veriCode: this.data.veriCode, mobile, userId, orgId, openId}
 
-    return network('/api/wx/checkVeriCode', params, 'POST', { "Content-Type": "application/x-www-form-urlencoded" }).then(res => {
+    return network('/xxx/checkVeriCode', params, 'POST', { "Content-Type": "application/x-www-form-urlencoded" }).then(res => {
       console.log(res);
       if (res.data.success == true) {
         console.log(res)

@@ -46,7 +46,7 @@ Page({
     })
     // 运费查询
     let freightQuery = this.freightQuery()
-    network('/api/getFreightFare', freightQuery, 'POST', { "Content-Type": "application/json" }).then(res => {
+    network('/xxx', freightQuery, 'POST', { "Content-Type": "application/json" }).then(res => {
       console.log(res)
       if (res.data.code == 200) {
         this.setData({
@@ -67,7 +67,7 @@ Page({
       siteId: this.data.siteId,
       source: this.data.source,
     }
-    network('/api/getAddress', addressParams,'POST').then(({data}) => {
+    network('/xxx', addressParams,'POST').then(({data}) => {
       if (!data.obj.entity) {
         return wx.showToast({
           title: '系统繁忙',
@@ -81,7 +81,7 @@ Page({
       })
       // 运费查询
       let freightQuery = this.freightQuery()
-      network('/api/getFreightFare', freightQuery, 'POST', { "Content-Type": "application/json" }).then(res => {
+      network('/xxx', freightQuery, 'POST', { "Content-Type": "application/json" }).then(res => {
         console.log(res)
         if(res.data.code ==200) {
           this.setData({
@@ -103,7 +103,7 @@ Page({
     //   dict: "buy_reason",
     //   siteId: this.data.siteId
     // }
-    // network('/api/dictByType', distParam, 'POST').then(({data}) => {})
+    // network('/xxx', distParam, 'POST').then(({data}) => {})
   },
   freightQuery() {
     //运费查询参数
@@ -176,7 +176,7 @@ Page({
     wx.showLoading({
       title: '支付中',
     })
-    network('/api/submitOrder', this.freightQuery(), 'POST', { "Content-Type": "application/json" }).then(({data}) =>{
+    network('/xxx', this.freightQuery(), 'POST', { "Content-Type": "application/json" }).then(({data}) =>{
       if(data.success) {
         var token = 'payQuery.token'
         var orderNo = 'payQuery.orderNo'
@@ -187,7 +187,7 @@ Page({
           [payWay]: data.obj.payWay,
         })
         console.log(this.data.payQuery)
-        network('/api/payOrder', this.data.payQuery, 'POST', { "Content-Type": "application/json" }).then(({ data }) => {
+        network('/xxx', this.data.payQuery, 'POST', { "Content-Type": "application/json" }).then(({ data }) => {
           wx.hideLoading()
           if(data.success) {
             console.log(data)

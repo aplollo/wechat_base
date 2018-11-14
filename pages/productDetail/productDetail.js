@@ -30,7 +30,7 @@ Page({
     this.data.token = token
     this.data.siteId = siteId
     this.data.user = user
-    network('/api/productDetail', {id:options.pid},'POST').then(({data}) => {
+    network('/xxx', {id:options.pid},'POST').then(({data}) => {
       console.log(data)
       if (data.code == 200) {
         // detail: data.obj.entity.content.replace(/\<img/g, '<img style="width:100%;height:auto;display:block" ')
@@ -45,7 +45,7 @@ Page({
           token,
           spIds
         }
-        network('/api/productPrice', params,'POST').then(res => {
+        network('/xxx', params,'POST').then(res => {
           console.log(res)
           if(res.data.code == 200) {
             var xnum = 'product.supplyPrice'
@@ -64,7 +64,7 @@ Page({
         })
       }
     })
-    network('/api/productSaleNum',{id:options.pid},'POST').then(res => {
+    network('/xxx',{id:options.pid},'POST').then(res => {
       if(res.data.code == 200) {
         this.setData({
           saleNum:res.data.obj.saleNum
@@ -94,7 +94,7 @@ Page({
       source: this.data.product.source,
       siteId: this.data.siteId
     }
-    network('/api/getAddress', params,'POST').then(({data}) => {
+    network('/xxx', params,'POST').then(({data}) => {
       console.log(data)
       if(!data.obj.entity)  {
         return this.setData({
@@ -120,7 +120,7 @@ Page({
         countyId: actAddress.county,
         townId: actAddress.town || 0
       }
-      network('/api/productStock', params,'POST').then(({data}) => {
+      network('/xxx', params,'POST').then(({data}) => {
         console.log(data)
         if (data.obj[0].status == 1) {
           this.setData({
@@ -225,7 +225,7 @@ Page({
       countyId: this.data.address.county || 0,
       townId: this.data.address.town || 0
     }
-    network('/api/productStock', query, 'POST').then(({data}) => {
+    network('/xxx', query, 'POST').then(({data}) => {
       console.log(data)
       if(data.code ==200) {
         console.log(data.obj[0].status == 1)
