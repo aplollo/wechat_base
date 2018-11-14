@@ -1,0 +1,30 @@
+<view class='search'>
+  <view class='searchBar'>
+    <view class='searchBox'>
+      <image class='searchImg' src='../../assets/images/search.png'></image>
+      <input class='searchInput' focus='true' bindinput='currentInput' value='{{currentInput}}'></input>
+      <!-- <image class='searchImg' src='../../assets/images/icon_close.png></image> -->
+      <image hidden='{{!currentInput.length}}' bindtap='deleteInput' class='deleteImg' src='../../assets/images/icon_close.png'></image>
+    </view>
+    <view class='searchButton' bindtap='toSearch'>搜索</view>
+  </view>
+  <view class='showList' wx:if='{{product.length}}'>
+    <view class='list-item' wx:for='{{product}}' wx:key='index' bindtap='toPage' data-pId='{{item.id}}'>
+      <image class='productImg' src='{{item.photo}}'></image>
+      <view class='detail'>
+        <view>{{item.itemName}}</view>
+        <view class='detail-main'>
+          <text class='supply'>{{item.supplyName}}</text>
+          <text class='price'>{{item.supplyPrice}}{{unit}}</text>
+          <!-- <image class='shopcar' src='../../assets/images/shopcar_2.png'></image> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='nomore {{product.length>0?"":"mt60"}}' hidden='{{!showToast}}'>
+    <view class='line'></view>
+    <view class='no-text'>{{loadText}}~</view>
+    <view class='line'></view>
+  </view>
+  
+</view>

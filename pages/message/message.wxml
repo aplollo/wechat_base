@@ -1,0 +1,9 @@
+<view class='message'>
+  <view class='item'>
+    <view class='message-text'>验证码</view>
+    <input class='message-input' placeholder='请输入验证码' value='{{veriCode}}' bindinput='getVeriCode'></input>
+    <view wx:if='{{msgFlag}}' class='message-get' bindtap='reduceNum'>点击获取验证码</view>
+    <view wx:else class='message-get'>{{num}}秒后重新获取</view>
+  </view>
+  <view class='message-btn' bindtap='confirm'>确定</view>
+</view>

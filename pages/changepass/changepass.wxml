@@ -1,0 +1,17 @@
+<view class='changePass'>
+  <view class='change-container'>
+    <view class='change-item'>
+      <view class='item-title'>原密码</view>
+      <input placeholder='填写原密码' placeholder-class='input-changeplace' password='true' value='{{oldPass}}'></input>
+    </view>
+    <view class='change-item'>
+      <view class='item-title'>新密码</view>
+      <input placeholder='填写新密码' placeholder-class='input-changeplace' password='true' value='{{newPass}}'></input>
+    </view>
+    <view class='change-item'>
+      <view class='item-title'>确认密码</view>
+      <input placeholder='确定新密码' placeholder-class='input-changeplace' password='true' value='{{confirmPass}}'></input>
+    </view>
+  </view>
+  <view class='confirm'>确定</view>
+</view>

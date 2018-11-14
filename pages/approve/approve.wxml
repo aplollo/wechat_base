@@ -1,0 +1,52 @@
+<view class='approve'>
+  <view class='title'>
+    <view class='tab-left {{status == 1?"tab-select":""}}' bindtap='changeStatus' data-status='1'>待审批</view>
+    <view class='tab-right {{status == 2?"tab-select":""}}' bindtap='changeStatus' data-status='2'>已审批</view>
+  </view>
+  <view class='main'>
+    <view class='list-item mt20' wx:for='{{orderList}}' wx:key='index'>
+      <view class='main-title'>
+        <view class='cg-content'>
+          <view>采购原因：{{item.remarks}}</view>
+          <view>采购单：{{item.orderNo}}</view>
+        </view>
+        <view class='cg-status' wx:if='{{item.operStatus == 0}}'>新建</view>
+        <view class='cg-status' wx:if='{{item.operStatus == 4}}'>撤销</view>
+        <view class='cg-status' wx:elif='{{item.operStatus == 11 || item.operStatus == 12}}'>待审批</view>
+        <view class='cg-status' wx:elif='{{item.operStatus == 15}}'>待支付</view>
+        <view class='cg-status' wx:elif='{{item.operStatus == 21}}'>不通过</view>
+        <view class='cg-status' wx:elif='{{item.operStatus == 22}}'>待收货</view>
+        <view class='cg-status' wx:elif='{{item.operStatus == 23}}'>已完成</view>
+        <view class='cg-status' wx:elif='{{item.operStatus == 41}}'>过期取消</view>
+      </view>
+      <view class='main-product' bindtap='toDetail' data-item='{{item.orderNo}}' wx:for='{{item.orderDetailList}}' wx:key='index'>
+        <image class='product-photo' src='{{item.productPic}}'></image>
+        <view class='product-content'>
+          <view class='product-name'>{{item.itemName}}</view>
+          <view class='price'>
+            <view>{{item.supplyPrice}}{{unit}}</view>
+            <view>x{{item.saleNum}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='total'>
+        <view>
+          订单合计：<text class='supplyPrice'>{{item.paySupply}}{{unit}}(含运费{{item.freight}}{{unit}})</text>
+        </view>
+        <view class='select {{item.selectStatus?"select-in":""}}' wx:if="{{status == 1}}" bindtap='select' data-item='{{item}}'>
+          <image wx:if='{{item.selectStatus}}' src='../../assets/images/select_def.png'></image>
+        </view>
+      </view>
+    </view>
+    <view style='text-align:center;background-color:#fff;'>{{loadText}}</view>
+  </view>
+  <view class='fix-button' wx:if="{{status == 1}}">
+    <view class='other'>
+      <!-- <view class='select select-in'>
+        <image src='../../assets/images/select_def.png'></image>
+      </view> -->
+    </view>
+    <view class='refuse' bindtap='refuse'>拒绝</view>
+    <view class='pass' bindtap='pass'>通过</view>
+  </view>
+</view>

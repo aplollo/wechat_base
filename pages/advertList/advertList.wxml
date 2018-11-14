@@ -1,0 +1,16 @@
+<view class='productList'>
+  <view class='showList'>
+    <view class='list-item' wx:for='{{productPrice}}' wx:key='index' bindtap='toPage' data-pId='{{item.id}}'>
+      <image class='productImg' src='{{item.photo}}'></image>
+      <view class='detail'>
+        <view>{{item.itemName}}</view>
+        <view class='detail-main'>
+          <text class='supply'>{{item.supplyName}}</text>
+          <text class='price'>{{item.supplyPrice}}{{unit}}</text>
+          <!-- <image class='shopcar' src='../../assets/images/shopcar_2.png'></image> -->
+        </view>
+      </view>
+    </view>
+    <view class='list-status' wx:if='{{productPrice.length}}'>{{loadState}}</view>
+  </view>
+</view>

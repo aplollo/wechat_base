@@ -1,0 +1,30 @@
+<template name='orderList'>
+  <view class='order-list'>
+    <view class='list-title'>
+      <view class='reason'>采购原因：{{remarks}}</view>
+      <view class='num'>采购单：{{orderNo}}</view>
+      <view wx:if='{{operStatus == 0 ||operStatus == 11 ||operStatus == 12}}' class='status color-orange'>待审批</view>
+      <view wx:elif='{{operStatus == 21 }}' class='status color-red'>未通过</view>
+      <view wx:elif='{{operStatus == 22 }}' class='status color-blue'>待收货</view>
+      <view wx:elif='{{operStatus == 23 }}' class='status color-green'>已完成</view>
+      <view wx:elif='{{operStatus == 4 }}' class='status color-red'>撤销</view>
+      <view wx:elif='{{operStatus == 41 }}' class='status color-red'>过期取消</view>
+    </view>
+    <view class='list-item' wx:for='{{orderDetailList}}' wx:key='index1'>
+      <view class='list-box'>
+        <image class='item-photo' src='{{item.productPic}}'></image>
+        <view class='item-content'>
+          <view class='title'>{{item.itemName}}</view>
+          <view class='price-num'>
+            <view class='price'>{{item.supplyPrice}}{{unit}}</view>
+            <view class='num'>x{{item.saleNum}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='list-btn'>
+      <view>订单合计：<text class='default-red'>{{paySupply}}{{unit}}</text></view>
+      <button class='btn-color' data-orderno='{{orderNo}}' bindtap='toDetail' style='margin:0;' type='warn' size='mini' plain='true'>订单详情</button>
+    </view>
+  </view>
+</template>

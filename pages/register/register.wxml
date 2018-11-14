@@ -1,0 +1,36 @@
+<view class='register'>
+  <view class='title'>
+    <image class='logo' src='../../assets/images/sunlight_logo.png'></image>
+    <image class='arrow' src='../../assets/images/arrow_bigright.png'></image>
+    <image class='logo' src='../../assets/images/sunlight_logo.png'></image>
+  </view>
+  <view class='register-container'>
+    <view class='company-message'>
+      <view class='company-title'>企业信息</view>
+      <view class='company-main'>
+        <view class='company-text'>企业全称</view>
+        <input class='company-input' bindinput='organizationName' placeholder='请输入企业全称' value='{{obj.organizationNames}}'></input>
+      </view>
+    </view>
+    <view class='company-message pt70'>
+      <view class='company-title'>授权登录人信息</view>
+      <view class='company-main'>
+        <view class='company-text'>姓名</view>
+        <input class='company-input' bindinput='username' placeholder='请输入姓名' value='{{obj.username}}'></input>
+      </view>
+      <view class='company-main'>
+        <view class='company-text'>身份证</view>
+        <input class='company-input' bindinput='certificationNumber' type='idcard' placeholder='请输入身份证号' value='{{obj.certificationNumber}}'></input>
+      </view>
+      <view class='company-main'>
+        <view class='company-text'>银行卡号</view>
+        <input class='company-input' bindinput='bankManagerNo' type='number' placeholder='请输入银行卡号' value='{{obj.bankManagerNo}}'></input>
+      </view>
+      <view class='company-main'>
+        <view class='company-text'>预留手机号</view>
+        <input class='company-input' bindinput='mobile' type='number' placeholder='请输入银行预留手机号' value='{{obj.mobile}}'></input>
+      </view>
+    </view>
+  </view>
+  <view class='register-button' bindtap='confirm'>确定</view>
+</view>

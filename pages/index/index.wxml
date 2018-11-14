@@ -1,0 +1,3 @@
+<view class='index'>
+  <image src='../../assets/images/index.jpg' bindtap='toPage'></image>
+</view>

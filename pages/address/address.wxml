@@ -1,0 +1,33 @@
+<view class='address'>
+  <view class='order-title'>
+    <view bindtap='chooseType' class='order-type {{chooseItem == item.id?"select-btn":""}}' wx:for='{{typeList}}' wx:key='index' data-id='{{item.id}}'>{{item.name}}</view>
+  </view>
+  <view class='mb98'>
+    <view class='address-list mb20' wx:for='{{addressList}}' wx:key='index'>
+      <view class='list-userinfo'>
+        <view class='list-user'>
+          <view class='username'>{{item.receiverName}}</view>
+          <view class='userphone'>{{item.receiverPhone}}</view>
+        </view>
+        <view class='user-address'>{{item.vo.provinceName+item.vo.cityName+item.vo.countyName+item.vo.townName+item.addressDetail}}</view>
+      </view>
+      <view class='address-set'>
+        <view class='setDefault'>
+          <image class='default-img mr28' wx:if='{{item.isDefault == 1}}' src='../../assets/images/select_def.png'></image>
+          <view class='default-box mr28' wx:else data-id='{{item.id}}' bindtap='setDefault'></view>
+          <view class='default-text' wx:if='{{item.isDefault == 1}}'>默认地址</view>
+          <view class='default-text' wx:else>设为默认地址</view>
+        </view>
+        <view class='setButton'>
+          <view class='del-btn mr28' wx:if='{{item.isDefault !=1}}' bindtap='deleteAddress' data-deleteid='{{item.id}}'>删除</view>
+          <view class='edi-btn' bindtap='editAddress' data-source='{{chooseItem}}' data-editItem='{{item}}'>编辑</view>
+        </view>
+      </view>
+    </view>
+    <view class='list-status' wx:if='{{!addressList.length}}'>无更多信息</view>
+  </view>
+  <view class='addButton' bindtap='addAddress'>
+    <image class='add-icon' src='../../assets/images/add.png'></image>
+    <view class='add-text'>添加地址</view>
+  </view>
+</view>

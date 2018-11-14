@@ -1,0 +1,51 @@
+/**app.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 110rpx 0 130rpx;
+  box-sizing: border-box;
+} 
+page {
+  height: 100%;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+}
+.mt20 {
+  margin-top: 20rpx;
+}
+.mt60 {
+  margin-top: 60rpx;
+}
+.mb20 {
+  margin-bottom: 20rpx;
+}
+.mb98 {
+  margin-bottom: 98rpx;
+}
+.mt100 {
+  margin-top: 100rpx;
+}
+.mr28 {
+  margin-right: 28rpx;
+}
+.pt20 {
+  padding-top: 20rpx;
+}
+.pt70 {
+  padding-top: 70rpx;
+}
+.select-btn {
+  color: #fd3c4f;
+  border-bottom: 3rpx solid #fd3c4f;
+}
+.loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+}

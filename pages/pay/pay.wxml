@@ -1,0 +1,55 @@
+<view class='pay'>
+  <view class='address' bindtap='changeAddress'>
+    <view class='receive-list' wx:if='{{activeAddress}}'>
+      <view class='receive-title'>
+        <text class='name'>收货人：{{activeAddress.receiverName}}</text>
+        <text class='phone'>{{activeAddress.receiverPhone}}</text>
+      </view>
+      <view class='receive-address'>
+        <view class='address-content'>
+          地址：{{activeAddress.vo.provinceName+activeAddress.vo.cityName+activeAddress.vo.countyName+activeAddress.vo.townName+activeAddress.addressDetail}}
+        </view>
+        <view class='right-icon'>
+          <image src='../../assets/images/arrow_right.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <image class='colorful-line' src='../../assets/images/address_line.png'></image>
+  <view class='store' wx:for='{{confirmOrder}}' wx:key='index'>
+    <image class='product-img' src='{{item.photo}}'></image>
+    <view class='product-detail'>
+      <view class='product-title'>{{item.itemName}}</view>
+      <view class='product-cost'>
+        <view class='price'>￥{{item.supplyPrice}}</view>
+        <view class='num'>x{{item.num}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='charge'>
+    <view class='cg-item'>
+      <view class='cg-box'>
+        <view class='cg-add'>小计:</view>
+        <view class='cg-price'>￥{{total}}</view>
+      </view>
+      <view class='cg-box'>
+        <view class='cg-add'>运费:</view>
+        <view class='cg-price'>￥{{freight}}</view>
+      </view>
+      <view class='cg-box'>
+        <view class='cg-add'>合计:</view>
+        <view class='cg-price'>￥{{tol}}</view>
+      </view>
+    </view>
+    <view class='cg-item'>共计{{totalNum}}件商品</view>
+  </view>
+  <view class='reason'>
+    <view class='reason-text'>采购事由</view>
+    <textarea class='reason-area' bindinput='reasonInput' placeholder='请输入采购事由' value='{{reason}}'></textarea>
+  </view>
+  <view class='line'></view>
+  <view class='pay-box'>
+    <view class='pay-choose'>当前支付方式：<text class='payway'>余额支付</text></view>
+    <view class='confirm' bindtap='confirm'>确定</view>
+  </view>
+</view>

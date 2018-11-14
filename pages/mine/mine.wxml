@@ -1,0 +1,28 @@
+<view class='mine'>
+  <view class='userinfo'>
+    <image class='protrait' src='../../assets/images/protrait.png'></image>
+    <view class='user'>
+      <view class='username'>客户，你好！</view>
+      <view class='balance'>账户可用余额：￥455</view>
+    </view>
+  </view>
+  <view class='banner'>
+    <view class='banner-item' bindtap='toOrder'>
+      <image class='banner-image' src='../../assets/images/icon_order.png' ></image>
+      <view class='banner-text'>我的订单</view>
+    </view>
+    <view class='banner-item' bindtap='toAddress'>
+      <image class='banner-image' src='../../assets/images/icon_address.png' ></image>
+      <view class='banner-text'>地址管理</view>
+    </view>
+    <view class='banner-item mt20' bindtap='toPhone'>
+      <image class='banner-image' src='../../assets/images/icon_phone.png' ></image>
+      <view class='banner-text'>客服电话</view>
+    </view>
+    <view class='banner-item mt20' bindtap='toPassword'>
+      <image class='banner-image' src='../../assets/images/icon_password.png' ></image>
+      <view class='banner-text'>修改密码</view>
+    </view>
+  </view>
+  <view class='quit-button'>退出登录</view>
+</view>

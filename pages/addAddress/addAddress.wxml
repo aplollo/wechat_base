@@ -1,0 +1,53 @@
+<view class='addAddress'>
+  <view class='order-title'>
+    <view bindtap='chooseType' class='order-type {{source == item.id?"select-btn":""}}' wx:for='{{typeList}}' wx:key='index' data-id='{{item.id}}'>{{item.name}}</view>
+  </view>
+  <view class='address-container'>
+    <view class='item'>
+      <view class='name'>收件人</view>
+      <input class='receiver' bindinput='receiverName' value='{{address.receiverName}}'></input>
+    </view>
+    <view class='item'>
+      <view class='name'>电话</view>
+      <input class='receiver' bindinput='receiverPhone' value='{{address.receiverPhone}}'></input>
+    </view>
+    <view class='item'>
+      <view class='name'>地区选择</view>
+      <view class='address-select'>
+        <view class='address-text'>
+          {{provinceName}}{{cityName}}{{countyName}}{{townName}}
+        </view>
+        <view class='address-select-btn' bindtap='showList'>
+          <image class='select-icon' wx:if='{{showFlag}}' src='../../assets/images/triangle_up.png'></image>
+          <image class='select-icon' wx:else src='../../assets/images/triangle.png'></image>
+        </view>
+        <view class='address-list' wx:if='{{showFlag}}'>
+          <view class='list-title'>
+            <view bindtap='changeType' data-type='province' class='title-item {{disType == "province"?"select-size":""}}'>省</view>
+            <view bindtap='changeType' data-type='city' class='title-item {{disType == "city"?"select-size":""}}'>市</view>
+            <view bindtap='changeType' data-type='county' class='title-item {{disType == "county"?"select-size":""}}'>区</view>
+            <view bindtap='changeType' data-type='town' class='title-item {{disType == "town"?"select-size":""}}'>县</view>
+          </view>
+          <view class='list-contain' wx:if='{{disType == "province"}}'>
+            <view bindtap='selectProvince' data-item='{{item}}' class='list-item' wx:for='{{provinceList}}' wx:key='index'>{{item.name}}</view>
+          </view>
+          <view class='list-contain' wx:if='{{disType == "city"}}'>
+            <view bindtap='selectCity' data-item='{{item}}' class='list-item' wx:for='{{cityList}}' wx:key='index'>{{item.name}}</view>
+          </view>
+          <view class='list-contain' wx:if='{{disType == "county"}}'>
+            <view bindtap='selectCounty' data-item='{{item}}' class='list-item' wx:for='{{countyList}}' wx:key='index'>{{item.name}}</view>
+          </view>
+          <view class='list-contain' wx:if='{{disType == "town"}}'>
+            <view bindtap='selectTown' data-item='{{item}}' class='list-item' wx:for='{{townList}}' wx:key='index'>{{item.name}}</view>
+            <view bindtap='selectTown' data-item='{{townReplace}}' class='list-item' wx:if='{{townList.length == 0}}'>全区</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='name'>详细地址</view>
+      <input class='receiver' bindinput='addressDetail' value='{{address.addressDetail}}'></input>
+    </view>
+  </view>
+  <view class='confirm' bindtap='submit'>确定</view>
+</view>

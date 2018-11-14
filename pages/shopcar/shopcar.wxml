@@ -1,0 +1,62 @@
+<view class='shopcar'>
+  <!-- <view class='address' bindtap='toAddress'>
+    <view class='receive-list'>
+      <view class='receive-title'>
+        <text class='name'>收货人：刘某</text>
+        <text class='phone'>131****6666</text>
+      </view>
+      <view class='receive-address'>
+        <view class='address-content'>
+          地址：湖北省 武汉市 东湖开发区沙阳路1号武大科技园2栋805室
+        </view>
+        <view class='right-icon'>
+          <image src='../../assets/images/arrow_right.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <image class='colorful-line' src='../../assets/images/address_line.png'></image> -->
+  <view class='store-choose' wx:if='{{shopCarProduct.length}}'>
+    <view class='store-type mt20' wx:for='{{filterList}}' wx:key='index'>
+      <view class='store-picker'>
+        <view class='choose {{item.chooseStatus?"choose-no-border":""}}' bindtap='allCheck' data-supplyid='{{index}}'>
+          <image wx:if='{{item.chooseStatus}}' class='choose-img' src='../../assets/images/select_def.png'></image>
+        </view>
+        <view class='supply-product'>供应商：{{item.name}}</view>
+      </view>
+      <view class='store-supply' wx:for='{{item.products}}' wx:key='index2'>
+        <view class='choose {{item.chooseStatus?"choose-no-border":""}}' bindtap='checked' data-item='{{item}}'>
+          <image wx:if='{{item.chooseStatus}}' class='choose-img' src='../../assets/images/select_def.png'></image>
+        </view>
+        <view class='supply-product'>
+          <image class='product-img' src='{{item.photo}}'></image>
+          <view class='product-main'>
+            <view class='product-name'>{{item.itemName}}</view>
+            <view class='product-price'>
+              <view class='unit-price'>{{item.supplyPrice}}{{unit}}</view>
+              <view class='product-num'>
+                <view class='add-btn' bindtap='reduce' data-item='{{item}}'>-</view>
+                <input class='num' value='{{item.num}}' bindinput='inputNum' type='number' data-item='{{item}}'></input>
+                <view class='reduce-btn' bindtap='add' data-item='{{item}}'>+</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='settlement'>
+      <view class='settle-btn' bindtap='settlement'>结算</view>
+      <view class='settle-money'>
+        <view class='total'>合计：</view>
+        <view class='money'>{{total}}{{unit}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='no-record' wx:else>
+    <view class='record-content'>
+      <image class='record-img' src='../../assets/images/service_record.png'></image>
+      <view class='record-text'>购物车空空如也~</view>
+      <view class='record-btn color-border' bindtap='toHome'>前往首页</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,3 @@
+<view class='special'>
+  <image wx:for='{{recomList}}' wx:key='index' class='show' src='{{item.photoUrl}}' bindtap='toPage' data-advertId='{{item.id}}'></image>
+</view>

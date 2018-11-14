@@ -1,0 +1,48 @@
+.message {
+  width: 100%;
+  height: 100%;
+  padding: 160rpx 24rpx 0;
+  box-sizing: border-box;
+}
+.message .item {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.item .message-text {
+  width: 110rpx;
+  line-height: 72rpx;
+}
+.item .message-input {
+  flex: 1;
+  padding-left: 20rpx;
+  height: 72rpx;
+  box-sizing: border-box;
+	border: 1rpx solid #cccccc;
+}
+.item .message-get {
+  width: 221rpx;
+	height: 72rpx;
+	line-height: 72rpx;
+  margin-left: 20rpx;
+  text-align: center;
+  color: #fff;
+	background-color: #fd3c4f;
+	border-radius: 8px;
+  font-size: 24rpx;
+}
+.message-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%,-50%,0);
+  width: 680rpx;
+	height: 96rpx;
+	line-height: 96rpx;
+  text-align: center;
+
+	background-color: #fd3c4f;
+	border-radius: 10rpx;
+  font-size: 36rpx;
+	color: #ffffff;
+}

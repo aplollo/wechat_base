@@ -1,0 +1,49 @@
+<view class="home">
+  <scroll-view scroll-y='true' class='home-son' bindscroll='scrollHandler' bindscrolltolower='scrollToBottom'>
+    <view class='searchBar' bindtap='toSearch'>
+      <image class='searchImg' src='../../assets/images/search.png'></image>
+    </view>
+    <view class='tabBar'>
+      <view class='tab-content' data-showType='{{item.showType}}' bindtap='toProductList' wx:if='{{advertList}}' wx:for='{{advertList}}' wx:key='index'>
+        <image wx:if='{{item.photoUrl}}' src='{{item.photoUrl}}'></image>
+        <text>{{item.name}}</text>
+      </view>
+      <view class='tab-content' bindtap='toSupply'>
+        <image src='../../assets/images/more.png'></image>
+        <text>更多</text>
+      </view>
+    </view>
+    <swiper class='swipe'>
+      <swiper-item wx:for='{{bannerList}}' wx:key='index'>
+        <image src='{{item.photoUrl}}' data-url='{{item.url}}' bindtap='toHref'></image>
+      </swiper-item>
+    </swiper>
+    <view class='line'></view>
+    <view class='move {{fixFlag?"moveTop":""}}'>
+      <view class='nice-product'>
+        <image src='../../assets/images/pinkLine.png'></image>
+        <text>精选商品</text>
+        <image src='../../assets/images/pinkLine.png'></image>
+      </view>
+      <view class='supplier'>
+        <view bindtap='toSelect' data-cateId='' class='{{cateId?"supplier-item":"supplier-select"}}'>全部供应商</view>
+        <view data-cateId='{{item.cateId}}' bindtap='toSelect' class='{{cateId == item.cateId ?"supplier-select":"supplier-item"}}' wx:for="{{supply}}" wx:key="index">{{item.cateName}}</view>
+        <view class='loading' wx:if='{{!httpFlag}}'></view>
+      </view>
+    </view>
+    <view class='showList {{fixFlag?"mt280":""}}' wx:if='{{productPrice.length}}'>
+      <view class='list-item' wx:for='{{productPrice}}' wx:key='index' bindtap='toPage' data-pId='{{item.id}}'>
+        <image class='productImg' src='{{item.photo}}'></image>
+        <view class='detail'>
+          <view>{{item.itemName}}</view>
+          <view class='detail-main'>
+            <text class='supply'>{{item.supplyName}}</text>
+            <text class='price'>{{item.supplyPrice}}{{unit}}</text>
+            <!-- <image class='shopcar' src='../../assets/images/shopcar_2.png'></image> -->
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='list-status'>{{loadState}}</view>
+  </scroll-view>
+</view>

@@ -1,0 +1,55 @@
+<view class='supplier' wx:if='{{cateList.length}}'>
+  <view class='scroll_box'>
+    <scroll-view style="width: auto;overflow:hidden;" scroll-x="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" class='xxx'>
+      <view wx:for-items="{{cateList}}" wx:key="cateName" class='item_list {{cateId == item.cateId ? "select-bg":""}}'
+        bindtap='chooseCli' data-flag='true' data-cateid='{{item.cateId}}' data-source='-1'
+      >{{item.cateName}}</view>
+      <view class='loading' wx:if='{{!sendFlag}}'></view>
+    </scroll-view>
+    <view class='controll-btn {{showFlag?"select-color":""}}' bindtap='showSupply'>
+      <view wx:if='{{!showFlag}}'>更多</view>
+      <view class='confirm' wx:else>确定</view>
+      <image class='arrow' src='../../assets/images/right.png' wx:if='{{!showFlag}}'></image>
+      <!-- <image class='arrow' src='../../assets/images/down.png' wx:else></image> -->
+    </view>
+  </view>
+  <view class='supply-select' wx:if='{{showFlag}}'>
+    <view class='supply-content'>
+      <view class='select-title'>供应商</view>
+      <view class='item_list {{!shop.length ? "select-bg":""}}' bindtap='chooseSly' data-source='-1'
+      >全部商城</view>
+      <view wx:for="{{shops}}" wx:key="{{source}}" class='item_list {{item.color ? "select-bg":""}}'
+        bindtap='chooseSly' data-source='{{item.source}}'
+      >{{item.name}}{{shop.indexOf(item)}}</view>
+      <view class='select-title'>分类</view>
+      <view wx:for-items="{{cateList}}" wx:key="cateName" class='item_list {{cateId == item.cateId ? "select-bg":""}}'
+        bindtap='chooseCli' data-cateid='{{item.cateId}}'
+      >{{item.cateName}}</view>
+    </view>
+  </view>
+
+  <view class='showList'>
+    <view class='list-item' wx:for='{{product}}' wx:key='index' bindtap='toPage' data-pId='{{item.id}}'>
+      <image class='productImg' src='{{item.photo}}'></image>
+      <view class='detail'>
+        <view>{{item.itemName}}</view>
+        <view class='detail-main'>
+          <text class='supply'>{{item.supplyName}}</text>
+          <text class='price'>{{item.supplyPrice}}{{unit}}</text>
+          <!-- <image class='shopcar' src='../../assets/images/shopcar_2.png'></image> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='nomore'>
+    <view class='line'></view>
+    <view class='no-text'>{{loadText}}~</view>
+    <view class='line'></view>
+  </view>
+  <!-- <view class='loading' wx:if='{{!loading}}' catchtouchmove='preventTouchMove'>
+    <view class='loading-box'>
+      <image class='loading-image' src='../../assets/images/loading.gif'></image>
+      <view class='loading-text'>加载中</view>
+    </view>
+  </view> -->
+</view>

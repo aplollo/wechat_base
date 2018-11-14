@@ -1,0 +1,63 @@
+<view class='approveDetail'>
+  <view class='approve-status'>
+    <view class='approve-name'>{{orderDetail.userName}}的审批单</view>
+    <view class='status'>状态：
+      <text class='status-text' wx:if='{{orderDetail.auditStatus == 0}}'>新建</text>
+      <text class='status-text' wx:elif='{{orderDetail.auditStatus == 4}}'>撤销</text>
+      <text class='status-text' wx:elif='{{orderDetail.auditStatus == 11 ||orderDetail.auditStatus == 12}}'>待审批</text>
+      <text class='status-text' wx:elif='{{orderDetail.auditStatus == 15}}'>待支付</text>
+      <text class='status-text' wx:elif='{{orderDetail.auditStatus == 21}}'>不通过</text>
+      <text class='status-text' wx:elif='{{orderDetail.auditStatus == 22}}'>待收货</text>
+      <text class='status-text' wx:elif='{{orderDetail.auditStatus == 23}}'>已完成</text>
+      <text class='status-text' wx:elif='{{orderDetail.auditStatus == 41}}'>过期取消</text>
+    </view>
+  </view>
+  <view class='line'></view>
+  <view class='approve-order'>
+    <view>订单编号：{{orderDetail.orderNo}}</view>
+    <view>审批是由：{{orderDetail.remarks}}</view>
+    <view>发起日期：{{orderDetail.cashtime}}</view>
+    <view>作废日期：{{orderDetail.validate}}</view>
+    <view>发起部门：{{orderDetail.orgName}}</view>
+  </view>
+  <view class='approve-address pt20'>
+    <view class='address-title'>收货地址</view>
+    <view class='address-detail'>{{orderDetail.address}}</view>
+  </view>
+  <view class='approve-total pt20'>
+    <view class='total-box'>
+      <view>共{{saleNum}}件商品</view>
+      <view>订单合计：{{totalPrice}}{{unit}}(含运费{{orderDetail.freight}}{{unit}})</view>
+    </view>
+  </view>
+  <view class='f520'></view>
+  <view class='approve-detail'>
+    <view class='detail-title'>
+      <view>采购明细</view>
+      <image bindtap='changeStatus' class='arrow' src='../../assets/images/right.png' wx:if='{{!showFlag}}'></image>
+      <image bindtap='changeStatus' class='arrow' src='../../assets/images/down.png' wx:else></image>
+    </view>
+    <view class='detail-shop' wx:for='{{orderDetailList}}' wx:key='index' wx:if='{{showFlag}}'>
+      <image class='shop-img' src='{{item.productPic}}'></image>
+      <view class='shop-main'>
+        <view class='shop-name'>{{item.itemName}}</view>
+        <view class='shop-price'>
+          <view>{{item.supplyPrice}}{{unit}}</view>
+          <view>x{{item.saleNum}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='order-progress'>
+      <view class='progress-start'>
+        <view class='name'>采购员下单</view>
+        <image class='progress-img' src='../../assets/images/arrow_long.png'></image>
+        <view class='name'>管理员审批</view>
+      </view>
+      <view class='progress-end'>
+        <view class='time' wx:if='{{auditLoad[0].status == null}}'></view>
+      <view class='time' wx:else>{{auditLoad[0].status}}</view>
+      <view class='time' hidden='{{!auditLoad[1].status}}'>{{auditLoad[1].status}}</view>
+      </view>
+    </view>
+  </view>
+</view>

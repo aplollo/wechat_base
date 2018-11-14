@@ -1,0 +1,47 @@
+.confirmAddress {
+  width: 100%;
+  height: 100%;
+}
+.confirmAddress .address {
+  width: 100%;
+  padding: 30rpx 24rpx 10rpx;
+  box-sizing: border-box;
+	background-color: #ffffff;
+  box-shadow: inset 0px 1px 0px 0px #ededed;
+}
+.confirmAddress .address:nth-last-child(1) {
+  border-bottom: 1px solid #ededed
+}
+.address .receive-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.receive-title {
+  width: 100%;
+  padding-bottom: 10rpx;
+}
+.receive-title .name {
+  margin-right: 100rpx;
+}
+.receive-address {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.receive-address .address-content {
+  width: 80%;
+}
+.receive-address .right-icon {
+  width: 20rpx;
+  height: 24rpx;
+}
+.right-icon image {
+  width: 100%;
+  height: 100%;
+}

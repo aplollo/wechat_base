@@ -1,0 +1,127 @@
+.address {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+/* title */
+.address .order-title {
+  width: 100%;
+  height: 98rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  box-shadow: inset 0px -1px 0px 0px #ededed;
+  background-color: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  /* justify-content: space-around; */
+  align-items: center;
+  color: #999;
+}
+.order-title .order-type {
+  width: 100rpx;
+  margin-right: 60rpx;
+  line-height: 97rpx;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}
+.address-list {
+  width: 100%;
+  height: 310rpx;
+  padding: 42rpx 24rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.list-userinfo {
+  width: 100%;
+}
+.list-user {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  color: #999;
+}
+.user-address {
+  width: 100%;
+  margin-top: 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.address-set {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.setDefault, .setButton {
+  display: flex
+}
+.default-box {
+  width: 44rpx;
+	height: 44rpx;
+	border: 1rpx solid #b2b2b2;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.default-img {
+  width: 44rpx;
+	height: 44rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.del-btn,.edi-btn {
+  width: 103rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 24rpx;
+  border-radius: 4rpx;
+  text-align: center;
+}
+.del-btn {
+  color: #fd3c4f;
+  border: 1rpx solid #fd3c4f;
+}
+.edi-btn {
+  color: #fff;
+  background-color: #fd3c4f;
+  border: 1rpx solid #fd3c4f;
+}
+.list-status {
+  width: 100%;
+  padding: 10rpx;
+  text-align: center;
+  color: #999;
+  font-size: 24rpx;
+}
+.addButton {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: center;
+  background-color: #fd3c4f;
+  font-size: 30rpx;
+  color: #fff;
+}
+.addButton .add-icon {
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 14rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.addButton .add-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+.select-border-none {
+  border: none;
+}

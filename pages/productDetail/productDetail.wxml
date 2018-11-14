@@ -1,0 +1,56 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class='productDetail'>
+  <view class='banner'>
+    <image src='{{product.photo}}'></image>
+  </view>
+  <view class='content'>
+    <view class='title'>
+      <text class='supply'>{{product.supplyName}}</text>
+      <text class='title-content'>{{product.itemName}}</text>
+    </view>
+    <view class='productDetail'>
+      <view class='sale'>
+        <text class='price'>{{price}}{{unit}}</text>
+        <text class='saleNum'>销量：{{saleNum}}件</text>
+      </view>
+      <view class='productCode'>商品编码：{{product.itemCode}}</view>
+    </view>
+  </view>
+  <view class='productIntroduce'>
+    <view class='introduce'>商品介绍</view>
+    <view class='detail'>
+      <!-- <rich-text class='details' nodes='{{detail}}'></rich-text> -->
+      <template is="wxParse" data="{{wxParseData:article_content.nodes}}"/>
+    </view>
+  </view>
+  <view class='shop-buttons'>
+    <view class='shopcar' bindtap='toShopcar'>
+      <image class='shopIcon' src='../../assets/images/shopcar_1.png'></image>
+      <text class='shopText'>购物车</text>
+    </view>
+    <view class='shopadd' data-type='0' bindtap='addShopcar'>加入购物车</view>
+    <view class='shopnow' data-type='1' bindtap='addShopcar'>立即购买</view>
+  </view>
+  <view class='model-shadow' wx:if='{{modelFlag}}'>
+    <view class='model-box'>
+      <view class='model-cancel' bindtap='cancelModel'>
+        <image src='../../assets/images/icon_close.png'></image>
+      </view>
+      <view class='model-product'>
+        <image class='model-img' src='{{product.photo}}'></image>
+        <view class='model-content'>
+          <view class='model-price'>单价：{{price}}{{unit}}</view>
+          <view class='model-address' wx:if='{{address}}' bindtap='editAddress'>地址：<text>{{address.provinceName+address.cityName+address.countyName+address.townName}}>></text></view>
+          <view class='model-address' wx:else bindtap='toDefault'><text>点击添加默认地址</text></view>
+          <view class='model-stock'>库存：{{stockNum}}</view>
+          <view class='model-shopbtn'>购买
+            <view class='add-btn' bindtap='reduce'>-</view>
+            <input class='num' value='{{num}}' bindinput='changeNum' type='number'></input>
+            <view class='reduce-btn' bindtap='add'>+</view>
+          件</view>
+        </view>
+      </view>
+      <view class='model-button' data-item='{{product}}' bindtap='ensure'>确定</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,49 @@
+.changePass {
+  width: 100%;
+  height: 100%;
+}
+.change-container {
+  width: 100%;
+  height: 550rpx;
+  box-sizing: border-box;
+  padding-top: 100rpx;
+  padding-bottom: 100rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.change-item {
+  width: 600rpx;
+  height: 64rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #e6e6e6;
+  display: flex;
+  flex-direction: row;
+  font-size: 32rpx;
+}
+.item-title {
+  width: 154rpx;
+  letter-spacing: 0;
+  text-align: left;
+  line-height: 64rpx;
+}
+.change-item input {
+  flex: 1;
+  height: 100%;
+  font-size: 16rpx;
+}
+.change-item .input-changeplace {
+  font-size: 32rpx;
+}
+.confirm {
+  width: 600rpx;
+	height: 98rpx;
+	line-height: 98rpx;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 32rpx;
+	border-radius: 49rpx;
+  color: #fff;
+  background-color: #fd3c4f;
+}

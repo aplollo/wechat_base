@@ -1,0 +1,18 @@
+<view class='confirmAddress'>
+  <view class='address' wx:for='{{addressList}}' wx:key='index'>
+    <view class='receive-list' bindtap='changeAddress' data-item='{{item}}'>
+      <view class='receive-title'>
+        <text class='name'>收货人：{{item.receiverName}}</text>
+        <text class='phone'>{{item.receiverPhone}}</text>
+      </view>
+      <view class='receive-address'>
+        <view class='address-content'>
+          地址：{{item.vo.provinceName+item.vo.cityName+item.vo.countyName+item.vo.townName+item.addressDetail}}
+        </view>
+        <!-- <view class='right-icon'>
+          <image src='../../assets/images/arrow_right.png'></image>
+        </view> -->
+      </view>
+    </view>
+  </view>
+</view>

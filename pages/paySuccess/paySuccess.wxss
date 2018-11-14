@@ -1,0 +1,41 @@
+.paySuccess {
+  width:100%;
+  height: 100%;
+}
+.paySuccess .success-img {
+  width: 160rpx;
+	height: 160rpx;
+  margin: 0 auto;
+}
+.success-img image {
+  width: 100%;
+  height: 100%;
+}
+.success-text {
+  margin: 24rpx auto 0;
+  text-align: center;
+}
+.lookinfo {
+  margin-top: 100rpx;
+  text-align: center;
+}
+.lookinfo view {
+  width: 240rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+  display: inline-block;
+	border-radius: 10rpx;
+	border: solid 1rpx #fd3c4f;
+  color: #fd3c4f;
+  margin: 0 22rpx;
+}
+.backHome {
+  width: 524rpx;
+	height: 96rpx;
+	line-height: 96rpx;
+  text-align: center;
+  margin: 65rpx auto 0;
+	border-radius: 10rpx;
+	border: solid 1rpx #989898;
+  font-size: 32rpx;
+}

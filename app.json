@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/register/register",
+    "pages/home/home",
+    "pages/special/special",
+    "pages/shopcar/shopcar",
+    "pages/mine/mine",
+    "pages/message/message",
+    "pages/productDetail/productDetail",
+    "pages/productList/productList",
+    "pages/supplier/supplier",
+    "pages/addAddress/addAddress",
+    "pages/address/address",
+    "pages/pay/pay",
+    "pages/confirmAddress/confirmAddress",
+    "pages/paySuccess/paySuccess",
+    "pages/order/order",
+    "pages/orderDetail/orderDetail",
+    "pages/phone/phone",
+    "pages/changepass/changepass",
+    "pages/login/login",
+    "pages/advertList/advertList",
+    "pages/approve/approve",
+    "pages/approveIndex/approveIndex",
+    "pages/approveDetail/approveDetail",
+    "pages/test/test",
+    "pages/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#333",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "云采",
+        "iconPath": "./assets/images/purchaseGray.png",
+        "selectedIconPath": "./assets/images/purchaseRed.png"
+      },
+      {
+        "pagePath": "pages/special/special",
+        "text": "专题",
+        "iconPath": "./assets/images/specialGray.png",
+        "selectedIconPath": "./assets/images/specialRed.png"
+      },
+      {
+        "pagePath": "pages/shopcar/shopcar",
+        "text": "购物车",
+        "iconPath": "./assets/images/carGray.png",
+        "selectedIconPath": "./assets/images/carRed.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "./assets/images/myGray.png",
+        "selectedIconPath": "./assets/images/myRed.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,238 @@
+.shopcar {
+  width: 100%;
+  height: 100%;
+}
+/* address */
+.shopcar .address {
+  width: 100%;
+  padding: 30rpx 24rpx 10rpx;
+  box-sizing: border-box;
+	background-color: #ffffff;
+  box-shadow: inset 0px 1px 0px 0px #ededed;
+}
+.address .receive-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.receive-title {
+  padding-bottom: 10rpx;
+}
+.receive-title .name {
+  margin-right: 100rpx;
+}
+.receive-address {
+  flex: 1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.receive-address .address-content {
+  width: 80%;
+}
+.receive-address .right-icon {
+  width: 20rpx;
+  height: 24rpx;
+}
+.right-icon image {
+  width: 100%;
+  height: 100%;
+}
+.colorful-line {
+  width: 100%;
+  height: 10rpx;
+}
+
+/* store-choose */
+.store-choose {
+  width: 100%;
+  margin-bottom: 140rpx;
+}
+.store-type {
+  width: 100%;
+}
+.store-picker ,.store-supply {
+  width: 100%;
+  padding: 0 24rpx 0 34rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* title-choose */
+.store-picker {
+  height: 100rpx;
+	background-color: #ffffff;
+	box-shadow: inset 0px -1rpx 0px 0px 
+		#ededed;
+}
+/* product-choose */
+.store-supply {
+  height: 260rpx;
+	background-color: #ffffff;
+	box-shadow: inset 0px -1rpx 0px 0px 
+		#ededed;
+}
+.choose {
+  width: 44rpx;
+	height: 44rpx;
+  margin-right: 56rpx;
+  box-sizing: border-box;
+	background-color: #ffffff;
+	border: 1rpx solid #b2b2b2;
+  border-radius: 50%;
+}
+.choose-no-border {
+  border: none;
+}
+.choose-img {
+  width: 100%;
+  height: 100%;
+}
+.supply-product {
+  flex: 1;
+
+}
+.store-supply .supply-product {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+	height: 160rpx;
+}
+.supply-product .product-img {
+  width: 180rpx;
+	height: 180rpx;
+  margin-right: 24rpx;
+}
+.supply-product .product-main {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.product-main .product-main {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient: vertical;
+}
+.product-main .product-price {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.product-price .unit-price {
+  font-size: 36rpx;
+  color: #fd3c4f;
+}
+.product-num .add-btn, .product-num .reduce-btn{
+  width: 50rpx;
+	height: 52rpx;
+	line-height: 52rpx;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+	border: 1rpx solid #cccccc;
+	background-color: #ededed;
+  box-sizing: border-box;
+  color: #999999;
+}
+.product-num .num {
+  width: 70rpx;
+	height: 52rpx;
+	line-height: 52rpx;
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+	border-top: 1rpx solid #cccccc;
+	border-bottom: 1rpx solid #cccccc;
+  vertical-align: middle;
+}
+
+.settlement {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 140rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 0 3rpx #ccc;
+}
+.settlement .settle-btn {
+  width: 128rpx;
+	height: 64rpx;
+	line-height: 64rpx;
+  text-align: center;
+  font-size: 32rpx;
+	color: #ffffff;
+	background-color: #fd3c4f;
+	border-radius: 6rpx;
+}
+.settlement .settle-money {
+  display: flex;
+  margin-right: 45rpx;
+}
+.settle-money .total {
+  color: #999999;
+}
+.settle-money .money {
+  color: #fd3c4f;
+}
+
+/* 无记录 */
+.no-record {
+  position: absolute;
+  left: 0;
+  top: 98rpx;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.no-record .record-content {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  text-align: center;
+}
+.record-img {
+  width: 191rpx;
+	height: 144rpx;
+  margin: 0 auto;
+  padding-top: 146rpx;
+  padding-bottom: 44rpx;
+}
+.record-text {
+  width: 100%;
+  text-align: center;
+  color: #999;
+  padding-bottom: 90rpx;
+}
+.record-btn {
+  width: 524rpx;
+	height: 88rpx;
+	line-height: 88rpx;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 32rpx;
+}
+.color-border {
+  color: #fd3c4f;
+  border: solid 1rpx #fd3c4f;
+  border-radius: 10rpx;
+}

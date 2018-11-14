@@ -1,0 +1,11 @@
+<view class='paySuccess'>
+  <view class='success-img'>
+    <image src='../../assets/images/success.png'></image>
+  </view>
+  <view class='success-text'>下单成功</view>
+  <view class='lookinfo'>
+    <view bindtap='toOrder'>查看订单</view>
+    <view bindtap='toShopcar'>前往购物车</view>
+  </view>
+  <view bindtap='toHome' class='backHome'>返回首页</view>
+</view>

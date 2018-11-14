@@ -1,0 +1,82 @@
+.index {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+.title {
+	width: 100%;
+	height: 300rpx;
+	background-color: #fd3c4f;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.title .protrait {
+  width: 143rpx;
+	height: 143rpx;
+  margin-left: 42rpx;
+  margin-right: 42rpx;
+  border-radius: 50%;
+  border:1rpx solid #fff;
+}
+.title .userinfo {
+  flex: 1;
+  height: 143rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+.userinfo .userphone {
+  font-size: 36rpx;
+}
+.userinfo .userbalance {
+  display: flex;
+}
+.userbalance .text {
+  /* line-height: 48rpx; */
+}
+.userbalance .balance {
+  /* font-size: 48rpx; */
+  /* line-height: 48rpx; */
+}
+/* main */
+.main {
+  width: 100%;
+}
+.main-item {
+  width: 100%;
+	height: 120rpx;
+	background-color: #ffffff;
+	box-shadow: inset 0px -1px 0px 0px #ededed;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.main-item .logo {
+  width: 60rpx;
+	height: 70rpx;
+  margin-left: 40rpx;
+  margin-right: 56rpx;
+}
+.main-item .approve {
+  font-family: PingFang-SC-Medium;
+	font-size: 32rpx;
+}
+
+/* button */
+.button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 360rpx;
+  width: 600rpx;
+	height: 98rpx;
+	line-height: 98rpx;
+  text-align: center;
+  color: #fff;
+	background-color: #fd3c4f;
+	border-radius: 49rpx;
+}

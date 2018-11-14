@@ -1,0 +1,70 @@
+.mine {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+.userinfo {
+  width: 100%;
+	height: 300rpx;
+	background-image: linear-gradient(-90deg, #ff5652 0%, #fe4951 30%, #fd3c4f 100%),linear-gradient(#fd3c4f, #fd3c4f);
+	background-blend-mode: normal, normal;
+  box-sizing: border-box;
+  padding: 0 24rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.userinfo .protrait {
+  width: 132rpx;
+	height: 132rpx;
+	background-color: #ffffff;
+	border: solid 1rpx #ffffff;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+.userinfo .user {
+  flex: 1;
+  color: #ffffff;
+}
+.user .username {
+  font-size: 32rpx;
+}
+.user .balance {
+  font-size: 28rpx;
+}
+.banner { 
+  width: 100%;
+
+}
+.banner-item {
+  width: 100%;
+  height: 98rpx;
+  line-height: 98rpx;
+  background-color: #ffffff;
+  box-shadow: inset 0px -1px 0px 0px #ededed;
+}
+.banner-item .banner-image {
+  width: 33rpx;
+  height: 36rpx;
+  padding-left: 26rpx;
+  padding-right: 42rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.banner-item .banner-text {
+  display: inline-block;
+  font-size: 32rpx;
+  vertical-align: middle;
+}
+.quit-button {
+  width: 600rpx;
+	height: 98rpx;
+	line-height: 98rpx;
+  margin: 94rpx auto 0;
+  text-align: center;
+	background-color: #fd3c4f;
+	border-radius: 49rpx;
+  font-size: 32rxp;
+  color: #fff;
+}

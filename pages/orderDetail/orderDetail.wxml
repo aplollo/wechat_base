@@ -1,0 +1,103 @@
+<view class='orderDetail'>
+  <view class='order-progress'>
+    <view class='progress-start'>
+      <view class='name'>采购员下单</view>
+      <image class='progress-img' src='../../assets/images/arrow_long.png'></image>
+      <view class='name'>管理员审批</view>
+      <!-- <view class='time' hidden='{{!auditLoad[0].status}}'>{{auditLoad[0].status}}</view> -->
+    </view>
+    <view class='progress-end'>
+      <view class='time' wx:if='{{auditLoad[0].status == null}}'></view>
+      <view class='time' wx:else>{{auditLoad[0].status}}</view>
+      <view class='time' hidden='{{!auditLoad[1].status}}'>{{auditLoad[1].status}}</view>
+    </view>
+    <!-- <image class='progress-img' src='../../assets/images/arrow_long.png'></image> -->
+    <!-- <view class='progress-end'>
+      <view class='name'>管理员审批</view>
+      <view class='time' hidden='{{!auditLoad[1].status}}'>{{auditLoad[1].status}}</view>
+    </view> -->
+  </view>
+  <view class='order-main'>
+    <view class='order-list'>
+      <view class='order-item'>
+        <view class='title'>订单状态：</view>
+        <view wx:if='{{orderDetail.operStatus == 0 ||orderDetail.operStatus == 11 ||orderDetail.operStatus == 12}}' class='detail'>待审批</view>
+        <view wx:elif='{{orderDetail.operStatus == 21 }}' class='detail'>不通过</view>
+        <view wx:elif='{{orderDetail.operStatus == 22 }}' class='detail'>待收货</view>
+        <view wx:elif='{{orderDetail.operStatus == 23 }}' class='detail'>已完成</view>
+        <view wx:elif='{{orderDetail.operStatus == 4 }}' class='detail'>撤销</view>
+        <view wx:elif='{{orderDetail.operStatus == 41 }}' class='detail'>过期取消</view>
+      </view>
+      <view class='order-item'>
+        <view class='title'>采购编号：</view>
+        <view class='detail'>{{orderDetail.orderNo}}</view>
+      </view>
+      <view class='order-item'>
+        <view class='title'>采购事由：</view>
+        <view class='detail'>{{orderDetail.remarks||""}}</view>
+      </view>
+      <view class='order-item'>
+        <view class='title'>发起时间：</view>
+        <view class='detail'>{{orderDetail.cashtime||""}}</view>
+      </view>
+      <view class='order-item'>
+        <view class='title'>作废时间：</view>
+        <view class='detail'>{{orderDetail.validate||""}}</view>
+      </view>
+      <view class='order-item'>
+        <view class='title'>发起部门：</view>
+        <view class='detail'>{{orderDetail.orgName||""}}</view>
+      </view>
+    </view>
+    <view class='order-list'>
+      <view class='order-item'>
+        <view class='title'>商品总计：</view>
+        <view class='detail'>{{totalPrice}}{{unit}}</view>
+      </view>
+      <view class='order-item'>
+        <view class='title'>商品数量：</view>
+        <view class='detail'>{{totalNum}}件</view>
+      </view>
+      <view class='order-item'>
+        <view class='title'>运费总计：</view>
+        <view class='detail'>{{orderDetail.freight}}{{unit}}</view>
+      </view>
+      <view class='order-item'>
+        <view class='title'>合计：</view>
+        <view class='detail'>{{orderDetail.paySupply}}{{unit}}</view>
+      </view>
+    </view>
+    <view class='order-list'>
+      <view class='order-item'>
+        <view class='title'>收件人：</view>
+        <view class='detail'>{{orderDetail.receiver || ""}}</view>
+      </view>
+      <view class='order-item'>
+        <view class='title'>电话：</view>
+        <view class='detail'>{{orderDetail.receiverPhone || ""}}</view>
+      </view>
+      <view class='order-item'>
+        <view class='title'>地址：</view>
+        <view class='detail'>{{orderDetail.address||""}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='approve-detail'>
+    <view class='detail-title'>
+      <view>采购明细</view>
+      <image bindtap='changeStatus' class='arrow' src='../../assets/images/right.png' wx:if='{{!showFlag}}'></image>
+      <image bindtap='changeStatus' class='arrow' src='../../assets/images/down.png' wx:else></image>
+    </view>
+    <view class='detail-shop' wx:for='{{orderDetailList}}' wx:key='index' wx:if='{{showFlag}}'>
+      <image class='shop-img' src='{{item.productPic}}'></image>
+      <view class='shop-main'>
+        <view class='shop-name'>{{item.itemName}}</view>
+        <view class='shop-price'>
+          <view>{{item.supplyPrice}}{{unit}}</view>
+          <view>x{{item.saleNum}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='revoke' wx:if='{{isCancel}}' bindtap='cancelOrder'>撤销订单</view>
+</view>

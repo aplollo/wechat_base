@@ -1,0 +1,179 @@
+.approveDetail {
+  width: 100%;
+  background-color: #fff;
+}
+.approveDetail .approve-status {
+  width: 100%;
+  height: 129rpx;
+  padding-left: 24rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  background-color: #fff;
+}
+.approve-status .approve-name {
+  font-size: 32rpx;
+}
+.approve-status .status {
+  color: #999;
+}
+.status-text {
+  color: #fd3c4f;
+}
+.line {
+  margin: 0 auto;
+  width: 90%;
+  height: 1rpx;
+  background-color: #eee;
+}
+/* order */
+.approve-order {
+  width: 100%;
+  height: 280rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  color: #999;
+  background-color: #fff;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+/* address */
+.approve-address {
+  width: 100%;
+	background-color: #f5f5f5;
+}
+.address-title {
+	width: 100%;
+	height: 96rpx;
+	line-height: 96rpx;
+  box-sizing: border-box;
+  padding-left: 24rpx;
+	background-color: #ffffff;
+	box-shadow: inset 0px -1rpx 0px 0px #ededed;
+  font-size: 32rpx;
+  font-family: PingFang-SC-Bold;
+}
+.address-detail {
+  width: 100%;
+  padding: 40rpx 24rpx;
+  box-sizing: border-box;
+  color: #999;
+	background-color: #ffffff;
+}
+/* total */
+.approve-total {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.approve-total .total-box {
+  width: 100%;
+  height: 96rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+.f520 {
+  width: 100%;
+  height: 20rpx;
+  background-color: #f5f5f5;
+}
+/* stage */
+.approve-detail {
+  width: 100%;
+  background-color: #fff;
+}
+.approve-detail .detail-title {
+  width: 100%;
+  height: 96rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+	background-color: #ffffff;
+	box-shadow: inset 0px -1rpx 0px 0px #ededed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail-title .arrow {
+  width: 40rpx;
+  height: 40rpx;
+}
+.approve-detail .detail-shop {
+  width: 702rpx;
+	height: 196rpx;
+  padding: 0 24rpx;
+  margin: 30rpx auto 40rpx;
+  box-sizing: border-box;
+	background-color: #f5f5f5;
+	border-radius: 4rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail-shop .shop-img {
+  width: 128rpx;
+	height: 128rpx;
+  margin-right: 20rpx;
+}
+.detail-shop .shop-main {
+  flex: 1;
+  height: 128rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  /* align-items:  */
+}
+.shop-main .shop-price {
+  display: flex;
+  justify-content: space-between;
+  color: #fd3c4f;
+}
+/* stage-status */
+.order-progress {
+  width: 100%;
+  height: 184rpx;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: inset 0px 1rpx 0px #ededed;
+}
+.progress-start {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.progress-img {
+  width: 200rpx;
+	height: 15rpx;
+}
+.progress-end {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  font-size: 30rpx;
+  color: #fd3c4f;
+}
+.time {
+  width:100rpx;
+  height: 30rpx;
+  font-size: 24rpx;
+  color: #fd3c4f;
+}

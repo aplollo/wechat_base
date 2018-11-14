@@ -1,0 +1,18 @@
+<view class='phone'>
+  <view wx:if='{{callFlag}}'>
+    <view class='phone-image'>
+      <image src='../../assets/images/service_phone.png'></image>
+    </view>
+    <view class='text'>
+      <text class='cb-text'>问题反馈请拨打电话：</text><text class='cb-num'>000 0000 000</text>
+    </view>
+  </view>
+  <view wx:else>
+    <view class='phone-image'>
+      <image src='../../assets/images/service_call.png'></image>
+    </view>
+    <view class='text' >
+      <text class='cb-text'>当前没有配置联系电话，请联系管理员！</text>
+    </view>
+  </view>
+</view>

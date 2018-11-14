@@ -1,0 +1,69 @@
+.register {
+  width: 100%;
+  height: 100%;
+  font-size: 30rpx;
+}
+/* logo */
+.register .title {
+  width: 100%;
+  height: 125rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.register .title .logo {
+  width: 120rpx;
+	height: 120rpx;
+}
+.register .title .arrow {
+  width: 90rpx;
+  height: 20rpx;
+  margin: 0 45rpx;
+}
+/* register-contain */
+.register-container {
+  width: 100%;
+  padding: 44rpx 24rpx 44rpx;
+  box-sizing: border-box;
+}
+.company-message {
+  width: 100%;
+}
+.company-message .company-title {
+  font-weight: 700;
+  margin-bottom: 44rpx;
+}
+.company-message .company-main {
+  width: 100%;
+  height: 72rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 27rpx;
+}
+.company-main .company-text {
+  width: 172rpx;
+  line-height: 72rpx;
+}
+.company-main .company-input {
+  flex: 1;
+  height: 72rpx;
+  padding-left: 24rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #ccc;
+}
+
+/* button */
+.register .register-button {
+  width: 680rpx;
+	height: 96rpx;
+	line-height: 96rpx;
+  text-align: center;
+  margin: 20rpx auto 0;
+  color: #fff;
+	background-color: #fd3c4f;
+	border-radius: 10rpx;
+  font-size: 36rpx;
+}

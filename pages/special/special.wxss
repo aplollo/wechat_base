@@ -1,0 +1,10 @@
+.special {
+  width: 100%;
+  padding-top: 20rpx;
+  background-color: #fff;
+}
+.special .show {
+  width: 100%;
+  height: 280rpx;
+  padding-top: 20rpx;
+}
